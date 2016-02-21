@@ -29,16 +29,20 @@ static Scanner scandoub;
             }
             double time=0;
             boolean isdouble;
-
+            do {  //I saw someone using this construction when I was researching how to do this, but I don't remember where I found it!
+                // I think it was probably on stackoverflow because that's where I do lots of research.
+                // I've been really frustrated about while loops and wanting to check at the bottom, so I'm glad I found out how.
+                //I suppose I could have error checked with try and catch, couldn't I?
                 System.out.println("Please enter the time for the run.");
-                if (scandoub.hasNextDouble()) {
+                if (scandoub.hasNextDouble()) { //this is so cool!  I guess we won't use it much if we're not going to be using scanners though.
                     time = scandoub.nextDouble();
                     isdouble = true;
-                }else{
+                } else {
                     System.out.println("Please type minutes and seconds as a decimal number.");
-                    isdouble=false;
+                    isdouble = false;
                     scandoub.next();
                 }
+            }while(!(isdouble));
 
             if (lakes.containsKey(lake)) {//check for existence of key
                 times = lakes.get(lake);//get array from hash
