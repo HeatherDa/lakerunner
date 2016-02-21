@@ -10,21 +10,25 @@ static Scanner scandoub;
         scandoub = new Scanner(System.in);
         HashMap<String,ArrayList<Double>>lakes= new HashMap<>();
         HashMap<Double, String> runstats = new HashMap<>();
+        System.out.println("How many entries do you wish to make?");
+        Double number=scandoub.nextDouble();
 
-        System.out.println("Please enter the name of the lake.");
-        String lake = scan.nextLine();
-        System.out.println("Please enter the time for the run.");
-        double time = scan.nextDouble();
-        ArrayList<Double>times=new ArrayList<>();
-        if (lakes.containsKey(lake)){//check for existence of key
-            times=lakes.get(lake);//get array from hash
-            times.add(time);//add new time to the array for the lake
-            lakes.put(lake,times);//update hash with new value
-        }else{
-            times.add(time);
-            lakes.put(lake,times);
+        for(int i=0;i<number;i++) {
+            ArrayList<Double> times = new ArrayList<>();
+            System.out.println("Please enter the name of the lake.");
+            String lake = scan.nextLine();
+            System.out.println("Please enter the time for the run.");
+            double time = scandoub.nextDouble();
+
+            if (lakes.containsKey(lake)) {//check for existence of key
+                times = lakes.get(lake);//get array from hash
+                times.add(time);//add new time to the array for the lake
+                lakes.put(lake, times);//update hash with new value
+            } else {
+                times.add(time);
+                lakes.put(lake, times);
+            }
+            System.out.println("What is in my hash? " + lakes + " What is in my array? " + times);
         }
-        System.out.println("What is in my hash? "+lakes+" What is in my array? "+ times);
-
     }
 }
