@@ -27,8 +27,18 @@ static Scanner scandoub;
             if (lake.equals("")) {//test for end of data input
                 break;
             }
-            System.out.println("Please enter the time for the run.");
-            double time = scandoub.nextDouble();
+            double time=0;
+            boolean isdouble;
+
+                System.out.println("Please enter the time for the run.");
+                if (scandoub.hasNextDouble()) {
+                    time = scandoub.nextDouble();
+                    isdouble = true;
+                }else{
+                    System.out.println("Please type minutes and seconds as a decimal number.");
+                    isdouble=false;
+                    scandoub.next();
+                }
 
             if (lakes.containsKey(lake)) {//check for existence of key
                 times = lakes.get(lake);//get array from hash
