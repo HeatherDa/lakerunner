@@ -15,7 +15,7 @@ static Scanner scandoub;
     }
     private static HashMap<String, ArrayList<Double>>makelakes(){
         HashMap<String,ArrayList<Double>>lakes= new HashMap<>();
-        String lake="Hit Enter and extra time to finish inputting data.";
+        String lake="Hit Enter an extra time to finish inputting data.";
         System.out.println(lake);
 
         while(!lake.equals("")) {
