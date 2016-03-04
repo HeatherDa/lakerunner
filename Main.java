@@ -33,6 +33,7 @@ static Scanner scandoub;
                 // I think it was probably on stackoverflow because that's where I do lots of research.
                 // I've been really frustrated about while loops and wanting to check at the bottom, so I'm glad I found out how.
                 //I suppose I could have error checked with try and catch, couldn't I?
+                //more info on Do While here https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html
                 System.out.println("Please enter the time for the run.");
                 if (scandoub.hasNextDouble()) { //this is so cool!  I guess we won't use it much if we're not going to be using scanners though.
                     time = scandoub.nextDouble();
